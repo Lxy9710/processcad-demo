@@ -36,6 +36,8 @@ import StarBorder from "./components/reactbits/StarBorder/StarBorder";
 import demo1Video from "../demo/demo1.mov";
 import demoAllVideo from "../demo/demoall.mov";
 
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const stages = [
   {
     id: "upload",
@@ -802,8 +804,8 @@ function UploadStage({ active }) {
     <div className="stage-detail stage-upload">
       <DemoVideoCard title={active.title} active={active} size="wide" src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
       <div className="detail-grid upload-grid">
-        <MediaTile tone="dark" title="原始 DWG 图纸缩略图" path="/assets/smartcad/target_dwg.png" />
-        <MediaTile title="DWG 上传界面截图" path="/assets/smartcad/02_upload.png" />
+        <MediaTile tone="dark" title="原始 DWG 图纸缩略图" path={assetPath("/assets/smartcad/target_dwg.png")} />
+        <MediaTile title="DWG 上传界面截图" path={assetPath("/assets/smartcad/02_upload.png")} />
         <InfoBox title="文件信息" rows={uploadFileInfo} accent={active.accent} />
       </div>
     </div>
@@ -815,9 +817,9 @@ function ExtractStage({ active }) {
     <div className="stage-detail">
       <DemoVideoCard title={active.title} active={active} size="wide" src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
       <div className="detail-grid three-media">
-        <MediaTile tone="dark" title="几何实体识别" path="/assets/smartcad/geometry_entity.png" />
-        <MediaTile tone="dark" title="标注识别结果" path="/assets/smartcad/annotation_result.png" />
-        <MediaTile tone="dark" title="Groups 分组结果" path="/assets/smartcad/groups_result.png" />
+        <MediaTile tone="dark" title="几何实体识别" path={assetPath("/assets/smartcad/geometry_entity.png")} />
+        <MediaTile tone="dark" title="标注识别结果" path={assetPath("/assets/smartcad/annotation_result.png")} />
+        <MediaTile tone="dark" title="Groups 分组结果" path={assetPath("/assets/smartcad/groups_result.png")} />
       </div>
       <InfoBox
         title="提取结果"
@@ -837,7 +839,7 @@ function GnnStage({ active }) {
   return (
     <div className="stage-detail">
       <div className="detail-grid split-media">
-        <MediaTile tone="dark" title="目标图纸" path="/assets/smartcad/target_dwg.png" />
+        <MediaTile tone="dark" title="目标图纸" path={assetPath("/assets/smartcad/target_dwg.png")} />
         <DemoVideoCard title={active.title} active={active} src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
       </div>
       <div className="topk-layout">
@@ -855,7 +857,7 @@ function GnnStage({ active }) {
             </div>
           ))}
         </div>
-        <MediaTile title="Top-K 结果截图" path="/assets/smartcad/topk.png" />
+        <MediaTile title="Top-K 结果截图" path={assetPath("/assets/smartcad/topk.png")} />
       </div>
     </div>
   );
@@ -883,9 +885,9 @@ function DiffStage({ active }) {
   return (
     <div className="stage-detail">
       <div className="detail-grid diff-top">
-        <MediaTile tone="dark" title="目标图纸 Target" path="/assets/smartcad/target_dwg.png" />
+        <MediaTile tone="dark" title="目标图纸 Target" path={assetPath("/assets/smartcad/target_dwg.png")} />
         <DiffMatrix />
-        <MediaTile tone="dark" title="模板图纸 Template" path="/assets/smartcad/template_dwg.png" />
+        <MediaTile tone="dark" title="模板图纸 Template" path={assetPath("/assets/smartcad/template_dwg.png")} />
       </div>
       <div className="detail-grid diff-mid">
         <InfoBox
@@ -904,7 +906,7 @@ function DiffStage({ active }) {
       </div>
       <div className="detail-grid split-media">
         <DemoVideoCard title={active.title} active={active} src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
-        <MediaTile title="差异报告截图 diff_ops.json / report" path="/assets/smartcad/10_diff_report.png" />
+        <MediaTile title="差异报告截图 diff_ops.json / report" path={assetPath("/assets/smartcad/10_diff_report.png")} />
       </div>
     </div>
   );
@@ -914,7 +916,7 @@ function ModifyStage({ active }) {
   return (
     <div className="stage-detail">
       <DemoVideoCard title={active.title} active={active} size="wide" src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
-      <MediaTile title="修改前 / 修改后对比图" path="/assets/smartcad/12_before_after.png" tall />
+      <MediaTile title="修改前 / 修改后对比图" path={assetPath("/assets/smartcad/12_before_after.png")} tall />
       <FeaturePanel title="能力亮点" items={capabilityItems} accent={active.accent} />
     </div>
   );
@@ -925,8 +927,8 @@ function CardStage({ active }) {
     <div className="stage-detail">
       <DemoVideoCard title={active.title} active={active} size="wide" src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
       <div className="detail-grid split-media">
-        <MediaTile tone="dark" title="最终 CAD 图纸" path="/assets/smartcad/final_cad.png" />
-        <MediaTile title="工艺卡片 PDF 预览" path="/assets/smartcad/13_process_card_preview.png" />
+        <MediaTile tone="dark" title="最终 CAD 图纸" path={assetPath("/assets/smartcad/final_cad.png")} />
+        <MediaTile title="工艺卡片 PDF 预览" path={assetPath("/assets/smartcad/13_process_card_preview.png")} />
       </div>
       <div className="detail-grid card-bottom">
         <ProcessTable />

@@ -36,6 +36,8 @@ import StarBorder from "./components/reactbits/StarBorder/StarBorder";
 import demo1Video from "../demo/demo1.mov";
 import demoAllVideo from "../demo/demoall.mov";
 
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const stages = [
   {
     id: "upload",
@@ -818,8 +820,8 @@ function UploadStage({ active }) {
     <div className="stage-detail stage-upload">
       <DemoVideoCard title={active.title} active={active} size="wide" src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
       <div className="detail-grid upload-grid">
-        <MediaTile tone="dark" title="Original DWG Thumbnail" path="/assets/smartcad/target_dwg.png" />
-        <MediaTile title="agentic CAD drawing generation UI Screenshot" path="/assets/smartcad/02_upload.png" />
+        <MediaTile tone="dark" title="Original DWG Thumbnail" path={assetPath("/assets/smartcad/target_dwg.png")} />
+        <MediaTile title="agentic CAD drawing generation UI Screenshot" path={assetPath("/assets/smartcad/02_upload.png")} />
         <InfoBox title="File Information" rows={uploadFileInfo} accent={active.accent} />
       </div>
     </div>
@@ -831,9 +833,9 @@ function ExtractStage({ active }) {
     <div className="stage-detail">
       <DemoVideoCard title={active.title} active={active} size="wide" src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
       <div className="detail-grid three-media">
-        <MediaTile tone="dark" title="Geometric Entity Recognition" path="/assets/smartcad/geometry_entity.png" />
-        <MediaTile tone="dark" title="Annotation Results" path="/assets/smartcad/annotation_result.png" />
-        <MediaTile tone="dark" title="Grouping Results" path="/assets/smartcad/groups_result.png" />
+        <MediaTile tone="dark" title="Geometric Entity Recognition" path={assetPath("/assets/smartcad/geometry_entity.png")} />
+        <MediaTile tone="dark" title="Annotation Results" path={assetPath("/assets/smartcad/annotation_result.png")} />
+        <MediaTile tone="dark" title="Grouping Results" path={assetPath("/assets/smartcad/groups_result.png")} />
       </div>
       <InfoBox
         title="Extraction Results"
@@ -853,7 +855,7 @@ function GnnStage({ active }) {
   return (
     <div className="stage-detail">
       <div className="detail-grid split-media">
-        <MediaTile tone="dark" title="Target Drawing" path="/assets/smartcad/target_dwg.png" />
+        <MediaTile tone="dark" title="Target Drawing" path={assetPath("/assets/smartcad/target_dwg.png")} />
         <DemoVideoCard title={active.title} active={active} src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
       </div>
       <div className="topk-layout">
@@ -871,7 +873,7 @@ function GnnStage({ active }) {
             </div>
           ))}
         </div>
-        <MediaTile title="Top-K Results Screenshot" path="/assets/smartcad/topk.png" />
+        <MediaTile title="Top-K Results Screenshot" path={assetPath("/assets/smartcad/topk.png")} />
       </div>
     </div>
   );
@@ -903,9 +905,9 @@ function DiffStage({ active }) {
   return (
     <div className="stage-detail">
       <div className="detail-grid diff-top">
-        <MediaTile tone="dark" title="Target Drawing" path="/assets/smartcad/target_dwg.png" />
+        <MediaTile tone="dark" title="Target Drawing" path={assetPath("/assets/smartcad/target_dwg.png")} />
         <DiffMatrix />
-        <MediaTile tone="dark" title="Template Drawing" path="/assets/smartcad/template_dwg.png" />
+        <MediaTile tone="dark" title="Template Drawing" path={assetPath("/assets/smartcad/template_dwg.png")} />
       </div>
       <div className="detail-grid diff-mid">
         <InfoBox
@@ -924,7 +926,7 @@ function DiffStage({ active }) {
       </div>
       <div className="detail-grid split-media">
         <DemoVideoCard title={active.title} active={active} src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
-        <MediaTile title="Diff Report Screenshot" path="/assets/smartcad/10_diff_report.png" />
+        <MediaTile title="Diff Report Screenshot" path={assetPath("/assets/smartcad/10_diff_report.png")} />
       </div>
     </div>
   );
@@ -934,7 +936,7 @@ function ModifyStage({ active }) {
   return (
     <div className="stage-detail">
       <DemoVideoCard title={active.title} active={active} size="wide" src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
-      <MediaTile title="Before / After Comparison" path="/assets/smartcad/12_before_after.png" tall />
+      <MediaTile title="Before / After Comparison" path={assetPath("/assets/smartcad/12_before_after.png")} tall />
       <FeaturePanel title="Capability Highlights" items={capabilityItems} accent={active.accent} />
     </div>
   );
@@ -945,8 +947,8 @@ function CardStage({ active }) {
     <div className="stage-detail">
       <DemoVideoCard title={active.title} active={active} size="wide" src={demoAllVideo} segmentStart={active.segmentStart} segmentEnd={active.segmentEnd} />
       <div className="detail-grid split-media">
-        <MediaTile tone="dark" title="Final CAD Drawing" path="/assets/smartcad/final_cad.png" />
-        <MediaTile title="Process Card PDF Preview" path="/assets/smartcad/13_process_card_preview.png" />
+        <MediaTile tone="dark" title="Final CAD Drawing" path={assetPath("/assets/smartcad/final_cad.png")} />
+        <MediaTile title="Process Card PDF Preview" path={assetPath("/assets/smartcad/13_process_card_preview.png")} />
       </div>
       <div className="detail-grid card-bottom">
         <ProcessTable />
