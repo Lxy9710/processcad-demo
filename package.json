@@ -1,0 +1,24 @@
+{
+  "name": "smartcad-react-bits-ui",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "dev:zh": "vite --host 127.0.0.1 --open /index.zh.html",
+    "build": "vite build",
+    "build:zh": "vite build --config vite.config.zh.js",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^0.468.0",
+    "postprocessing": "^6.36.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "three": "^0.180.0",
+    "vite": "^7.1.12"
+  },
+  "devDependencies": {}
+}
