@@ -710,7 +710,7 @@ function ProcessCADVideoPlayer({ active, activeStage, setActiveStage }) {
           <span />
         </div>
         <div>
-          <strong>ProcessCAD @XJTU</strong>
+          <strong>ProcessCAD</strong>
           <span>{active.title}</span>
         </div>
         <button className="video-mode" type="button" onClick={() => setActiveStage(0)}>
